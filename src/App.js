@@ -77,7 +77,7 @@ class App extends React.Component {
         ) : (
             <button
               onClick={this.loadData}
-              className="btn_load"
+              className="btn--load"
               disabled={this.state.disabled}
             >
               {this.state.disabled ? "Loading..." : "Load"}

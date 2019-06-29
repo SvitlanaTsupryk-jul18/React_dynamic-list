@@ -2,9 +2,9 @@ import React from 'react';
 import User from './User'
 
 const Post = ({ item }) => (
-    <article className="post_item" >
+    <article>
         <h2>{item.title}</h2>
-        <p>{item.body}</p>
+        <p className="post__text">{item.body}</p>
         <User
             user={item.user}
             comments={item.comments}

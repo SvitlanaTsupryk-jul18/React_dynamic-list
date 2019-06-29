@@ -21,10 +21,12 @@ class User extends React.Component {
         const { user, comments } = this.props
         return (
             <div className="user">
-                <span>{user.name}</span>
-                <p>{user.email}</p>
-                <address>{user.address.city}</address>
-                <button className="show" onClick={this.showComments} >{this.state.show ? "Hide " : "Show "}comments</button>
+                <div className="user__info">
+                    <span>autor : {user.name}</span>
+                    <p>email : {user.email}</p>
+                    <address>address : {user.address.city}</address>
+                </div>
+                <button className="btn--show" onClick={this.showComments} >{this.state.show ? "Hide " : "Show "}comments</button>
                 <CommentList items={comments} classShow={this.state.show} />
             </div>)
     }
