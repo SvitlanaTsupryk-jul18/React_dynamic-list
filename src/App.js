@@ -13,7 +13,8 @@ class App extends React.Component {
       posts: [],
       filterValue: '',
       isLoaded: false,
-      disabled: false
+      disabled: false,
+      show: false
     };
 
     // this.handleFilter = (filterValue) => {
@@ -64,7 +65,9 @@ class App extends React.Component {
 
   //   return todos.sort(callback);
   // }
+  // showComments() {
 
+  // }
   render() {
     const { posts, isLoaded, filterValue } = this.state;
     // const visiblePosts = this.sortTodos(posts, sortField);
@@ -79,6 +82,7 @@ class App extends React.Component {
         {isLoaded ? (
           <PostList
             items={visiblePosts}
+          // showComments={showComments}
           // filterPosts={this.filterPosts}
           />
         ) : (

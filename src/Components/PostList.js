@@ -16,7 +16,7 @@ const PostList = ({ items }) => (
       <Post key={item.id} item={item} />
     ))}
 
-  </div>
+  </div >
 );
 
 export default PostList;

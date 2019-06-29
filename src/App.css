@@ -5,3 +5,9 @@
 .TodoList th {
   cursor: pointer;
 }
+.comments{
+  display: none;
+}
+.show{
+  display: block;
+}
