@@ -1,16 +1,16 @@
 import React from 'react';
 import Post from './Post'
 
-const PostList = ({ items }) => (
+const PostList = ({ items, setFilterQuery, value }) => (
   <div className="posts">
-    {/* <form onSubmit={this.addItem}>
-      <input className="newTodo"
-        placeholder="What needs to be done?"
-        autoFocus={true}
-        value={this.state.currentValue}
-        onChange={this.setValue}>
-      </input>
-    </form> */}
+    {/* <form onSubmit={this.filterPosts}> */}
+    <input className="filter"
+      placeholder="What do you want to find?"
+      autoFocus={true}
+      query={value}
+      onChange={setFilterQuery}>
+    </input>
+    {/* </form> */}
 
     {items.map(item => (
       <Post key={item.id} item={item} />

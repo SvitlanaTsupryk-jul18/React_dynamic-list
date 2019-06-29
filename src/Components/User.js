@@ -13,8 +13,7 @@ class User extends React.Component {
         this.showComments = () => {
             this.setState(prevState => ({
                 show: !prevState.show
-            })
-            )
+            }))
         }
     }
 

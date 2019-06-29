@@ -11,15 +11,15 @@ class App extends React.Component {
 
     this.state = {
       posts: [],
-      filterValue: '',
+      query: '',
       isLoaded: false,
       disabled: false,
       show: false
     };
 
-    // this.handleFilter = (filterValue) => {
-    //   this.setState({ filterValue });
-    // };
+    this.setFilterQuery = (event) => {
+      this.setState({ query: event.target.value });
+    };
   }
 
   getPosts(todos, users, comments) {
@@ -46,32 +46,21 @@ class App extends React.Component {
         posts: items,
         isLoaded: true,
       });
-    }, 1000);
+    }, 500);
   };
 
   componentWillUnmount() {
     clearTimeout(this.timerId);
   }
 
+  filterPosts(posts, query) {
+    let filteredPosts = posts && posts.filter(post => post.title.includes(query) || post.body.includes(query));
+    return filteredPosts;
+  }
 
-  // sortTodos(todos, sortField) {
-  //   const callbackMap = {
-  //     [SORT_ORDER_TITLE]: (a, b) => a.title.localeCompare(b.title),
-  //     [SORT_ORDER_USER]: (a, b) => a.user.name.localeCompare(b.user.name),
-  //     [SORT_ORDER_COMPLETED]: (a, b) => a.completed - b.completed,
-  //   };
-
-  //   const callback = callbackMap[sortField] || callbackMap[SORT_ORDER_TITLE];
-
-  //   return todos.sort(callback);
-  // }
-  // showComments() {
-
-  // }
   render() {
-    const { posts, isLoaded, filterValue } = this.state;
-    // const visiblePosts = this.sortTodos(posts, sortField);
-    const visiblePosts = posts;
+    const { posts, isLoaded, query } = this.state;
+    const visiblePosts = this.filterPosts(posts, query);
 
     return (
       <div className="App">
@@ -82,8 +71,8 @@ class App extends React.Component {
         {isLoaded ? (
           <PostList
             items={visiblePosts}
-          // showComments={showComments}
-          // filterPosts={this.filterPosts}
+            setFilterQuery={this.setFilterQuery}
+            value={this.state.query}
           />
         ) : (
             <button
