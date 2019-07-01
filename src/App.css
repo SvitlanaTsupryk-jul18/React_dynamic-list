@@ -1,33 +1,93 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color:#023e3e;
+  background-color: #86ffff;
+}
+.btn {
+  background-color: #009999;
+  color:#86ffff;
+  border: none;
+  padding: 10px 20px;
+  transition: all .3s;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 20px;
+}
+.btn:hover {
+  color:#5CCCCC;
+  background-color: #006363;
+  transform: scale(1.05);
+}
+.btn--load {
+  font-size: 24px;
+  margin: 20px auto;
+  display: inherit;
+  transition: all .5s;
+}
+.btn--load:hover {
+  transform: rotate(360deg) scale(1);
+}
+
+h1, h2 {
   text-align: center;
+  padding: 15px;
+  text-transform: uppercase;
+  color: #006363;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.filter {
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  display: block;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.posts{
+  padding: 20px;
+}
+.post__text {
+  padding: 10px;
+}
+.post__text::first-letter {
+  text-transform: capitalize;
+}
+.user {
+  font-family: 'Bilbo', cursive;
+}
+.user__info{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-
-.App-link {
-  color: #61dafb;
+.user__info * {
+  padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.comments{
+  font-family: 'Stint Ultra Condensed', cursive;
+  display: none;
+  padding-left: 20px;
+  color: #006363;
+  background-color: #5CCCCC;
+  font-size: 14px;
+}
+.comments__item{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #006363;
+}
+h3{
+  text-transform: uppercase;
+  padding-top: 10px;
+  font-size: 1em;
+}
+.show{
+  display: block;
+}
+.warning{
+  margin-left: 20px;
+  font-size: 24px;
 }
