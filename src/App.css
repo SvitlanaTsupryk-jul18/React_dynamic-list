@@ -9,7 +9,7 @@ body {
   color:#023e3e;
   background-color: #86ffff;
 }
-button {
+.btn {
   background-color: #009999;
   color:#86ffff;
   border: none;
@@ -20,7 +20,7 @@ button {
   cursor: pointer;
   margin: 20px;
 }
-button:hover {
+.btn:hover {
   color:#5CCCCC;
   background-color: #006363;
   transform: scale(1.05);
@@ -86,4 +86,8 @@ h3{
 }
 .show{
   display: block;
+}
+.warning{
+  margin-left: 20px;
+  font-size: 24px;
 }

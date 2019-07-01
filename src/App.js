@@ -16,11 +16,11 @@ class App extends React.Component {
       disabled: false,
       show: false
     };
-
-    this.setFilterQuery = (event) => {
-      this.setState({ query: event.target.value });
-    };
   }
+
+  setFilterQuery = (event) => {
+    this.setState({ query: event.target.value });
+  };
 
   getPosts(todos, users, comments) {
     return todos.map(post => ({
@@ -41,7 +41,7 @@ class App extends React.Component {
 
     const items = this.getPosts(posts, users, comments);
 
-    this.timerId = setTimeout(() => {
+    setTimeout(() => {
       this.setState({
         posts: items,
         isLoaded: true,
@@ -49,19 +49,13 @@ class App extends React.Component {
     }, 500);
   };
 
-  componentWillUnmount() {
-    clearTimeout(this.timerId);
-  }
-
   filterPosts(posts, query) {
-    let filteredPosts = posts && posts.filter(post => post.title.includes(query) || post.body.includes(query));
-    return filteredPosts;
+    return posts && posts.filter(post => post.title.includes(query) || post.body.includes(query));
   }
 
   render() {
     const { posts, isLoaded, query } = this.state;
     const visiblePosts = this.filterPosts(posts, query);
-
     return (
       <div className="App">
         <h1>
@@ -77,7 +71,7 @@ class App extends React.Component {
         ) : (
             <button
               onClick={this.loadData}
-              className="btn--load"
+              className="btn btn--load"
               disabled={this.state.disabled}
             >
               {this.state.disabled ? "Loading..." : "Load"}

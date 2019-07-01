@@ -26,7 +26,7 @@ class User extends React.Component {
                     <p>email : {user.email}</p>
                     <address>city : {user.address.city}</address>
                 </div>
-                <button className="btn--show" onClick={this.showComments} >{this.state.show ? "Hide " : "Show "}comments</button>
+                <button className="btn btn--show" onClick={this.showComments} >{this.state.show ? "Hide " : "Show "}comments</button>
                 <CommentList items={comments} classShow={this.state.show} />
             </div>)
     }
